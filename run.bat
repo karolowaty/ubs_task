@@ -1,0 +1,1 @@
+java -jar .\target\roman-arabian-1.0-SNAPSHOT.jar
