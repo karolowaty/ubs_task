@@ -60,7 +60,7 @@ public class RomanArabic {
 
             int current = romanCharsWeight.get(roman.charAt(i));
             countedInRow = (current == previous) ? countedInRow+1 : 1;
-            if (current < previous){
+            if (current <= previous){
                 if (countedInRow > 1) throw new IllegalStateException();
                 arabic -= current;
             }else {
