@@ -20,4 +20,15 @@ public class RomanArabicNegativeTest {
         romanArabic.getArabic();
     }
 
+    @Test( expectedExceptions = Exception.class )
+    public void expectedException_IIII_Test(){
+        RomanArabic romanArabic = new RomanArabic("IIII");
+        romanArabic.getArabic();
+    }
+
+    @Test( expectedExceptions = NullPointerException.class )
+    public void expectedException_CCM_Test(){
+        RomanArabic romanArabic = new RomanArabic("CCM");
+        romanArabic.getArabic();
+    }
 }
