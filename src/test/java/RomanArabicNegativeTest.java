@@ -9,8 +9,10 @@ public class RomanArabicNegativeTest {
         Negative test cases:
 
         Empty String - NullPointerException
-        IIII - Exception
-        CCM - Exception
+        MIIII - IllegalStateException
+        MCCM - IllegalStateException
+        IIII - IllegalStateException
+        CCM - IllegalStateException
 
      */
 
