@@ -119,13 +119,11 @@ public class RomanArabicPositiveTest {
         Assert.assertEquals( romanArabic.getArabic(), 11 );
     }
 
-
     @Test
     public void checkValidRoman_XIII_Test(){
         RomanArabic romanArabic = new RomanArabic("XIII");
         Assert.assertEquals( romanArabic.getArabic(), 13 );
     }
-
 
     @Test
     public void checkValidRoman_XIV_Test(){

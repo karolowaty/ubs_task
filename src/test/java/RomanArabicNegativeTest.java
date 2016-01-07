@@ -47,6 +47,24 @@ public class RomanArabicNegativeTest {
     }
 
     @Test( expectedExceptions = IllegalStateException.class )
+    public void expectedException_MLMCMX_Test(){
+        RomanArabic romanArabic = new RomanArabic("MLMCMX");
+        romanArabic.getArabic();
+    }
+
+    @Test( expectedExceptions = IllegalStateException.class )
+    public void expectedException_LMCMXM_Test(){
+        RomanArabic romanArabic = new RomanArabic("LMCMXM");
+        romanArabic.getArabic();
+    }
+
+    @Test( expectedExceptions = IllegalStateException.class )
+    public void expectedException_XM_Test(){
+        RomanArabic romanArabic = new RomanArabic("XM");
+        romanArabic.getArabic();
+    }
+
+    @Test( expectedExceptions = IllegalStateException.class )
     public void expectedException_KAROL_Test(){
         RomanArabic romanArabic = new RomanArabic("KAROL");
         romanArabic.getArabic();
