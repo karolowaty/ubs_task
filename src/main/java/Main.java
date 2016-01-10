@@ -1,6 +1,4 @@
 import java.io.Console;
-import java.util.Scanner;
-
 /**
  * Created by gUser on 2016-01-06.
  */
@@ -12,7 +10,16 @@ public class Main {
             System.exit(1);
         }
 
-        RomanArabic romanArabic = new RomanArabic( c.readLine("Enter roman number: ") );
-        romanArabic.getArabic();
+        while(true) {
+            try {
+                System.out.println("Enter roman number or enter empty string to leave: ");
+                RomanArabic romanArabic = new RomanArabic(c.readLine());
+                System.out.println("Arabian: " + romanArabic.getArabic());
+            } catch(NullPointerException nullPointerException){
+                System.exit(1);
+            } catch(IllegalStateException illegalStateException){
+                System.out.println("Mismatched syntax for roman value");
+            }
+        }
     }
 }

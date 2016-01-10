@@ -6,14 +6,14 @@ import java.util.Optional;
  */
 public class RomanArabic {
 
-    static private Hashtable<Character, Integer> romanCharsWeight = setRomanCharsWeight();
+    final private Hashtable<Character, Integer> romanCharsWeight = setRomanCharsWeight();
 
     private String roman;
     private Integer arabic;
 
     private RomanArabic(){}
 
-    static Hashtable<Character, Integer> setRomanCharsWeight(){
+    private Hashtable<Character, Integer> setRomanCharsWeight(){
         Hashtable<Character, Integer> romanCharsWeight = new Hashtable<>();
         romanCharsWeight.put('i',1);
         romanCharsWeight.put('x',10);
@@ -36,8 +36,8 @@ public class RomanArabic {
         setArabic(roman);
     }
 
-    public Boolean validateRoman(Object roman){
-        // very simple validation
+    private Boolean validateRoman(Object roman){
+        //roman.toString().toLowerCase().
         return roman.toString().toLowerCase().matches("(i|x|c|m|v|l|d){1,}");
     }
 
