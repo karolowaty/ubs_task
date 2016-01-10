@@ -51,6 +51,40 @@ public class RomanArabic {
         return this.roman;
     }
 
+    private int opositeSign(int number){
+        return number * -1;
+    }
+
+    private void setArabic(String roman) throws IllegalStateException {
+        int previous = romanCharsWeight.get(roman.charAt(roman.length()-1));
+        int sum = previous;
+
+        int countedInRow = 1;
+        int currentSign = 1;
+
+        for(int i = roman.length()-2; i>=0 ; i--) {
+
+            int current = romanCharsWeight.get(roman.charAt(i));
+
+            countedInRow = (current == previous) ? countedInRow+1 : 1;
+            currentSign = ( (current < previous) || (current > previous && currentSign < 0 ) ) ? opositeSign(currentSign):currentSign;
+
+            if(
+                ( currentSign < 0 && countedInRow > 1 ) ||
+                ( currentSign < 0 && countedInRow == 1 && current*10/previous != 1 && current*10/previous != 2 ) ||
+                ( currentSign > 0 && countedInRow > 3 )
+            ){
+                throw new IllegalStateException();
+            }
+
+            sum += current*currentSign;
+            previous = current;
+
+        }
+        this.arabic = sum;
+    }
+
+    /*
     private void setArabic(String roman) throws IllegalStateException {
         int arabic = 0;
         int previous = 0;
@@ -60,18 +94,22 @@ public class RomanArabic {
 
             int current = romanCharsWeight.get(roman.charAt(i));
             countedInRow = (current == previous) ? countedInRow+1 : 1;
-            if (current <= previous){
+
+            if (current < previous){
                 if (countedInRow > 1) throw new IllegalStateException();
+                // previous musi byc wielokrotnoscia 10
                 arabic -= current;
             }else {
                 if (countedInRow > 3) throw new IllegalStateException();
                 arabic += current;
             }
-            previous = current;
+            if( current != previous)
+                previous = current;
 
         }
         this.arabic = arabic;
     }
+    */
 
     public int getArabic(){
         return this.arabic;

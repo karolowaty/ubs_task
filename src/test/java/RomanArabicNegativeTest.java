@@ -70,4 +70,16 @@ public class RomanArabicNegativeTest {
         romanArabic.getArabic();
     }
 
+    @Test( expectedExceptions = IllegalStateException.class )
+    public void expectedException_IXCM_Test(){
+        RomanArabic romanArabic = new RomanArabic("IXCM");
+        romanArabic.getArabic();
+    }
+
+    @Test( expectedExceptions = IllegalStateException.class )
+    public void expectedException_ICXM_Test(){
+        RomanArabic romanArabic = new RomanArabic("ICXM");
+        romanArabic.getArabic();
+    }
+
 }
