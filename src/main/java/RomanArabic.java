@@ -37,8 +37,12 @@ public class RomanArabic {
     }
 
     private Boolean validateRoman(Object roman){
-        //roman.toString().toLowerCase().
-        return roman.toString().toLowerCase().matches("(i|x|c|m|v|l|d){1,}");
+        return roman
+                .toString()
+                .toLowerCase()
+                .chars()
+                .mapToObj(operand -> (char)operand)
+                .allMatch( character -> romanCharsWeight.containsKey(character));
     }
 
     private void setRoman(String roman){
