@@ -42,6 +42,7 @@ public class RomanArabicPositiveTest {
         XX = 20
         XXI = 21
         MDLV = 1555
+        MCMXLIV = 1944
         MCMXCIX = 1999
         MMCXI = 2111
 
@@ -163,6 +164,12 @@ public class RomanArabicPositiveTest {
 
     @Test
     public void checkValidRoman_MCMXCIX_Test(){
+        RomanArabic romanArabic = new RomanArabic("MCMXLIV");
+        Assert.assertEquals( romanArabic.getArabic(), 1944 );
+    }
+
+    @Test
+    public void checkValidRoman_MCMXLIV_Test(){
         RomanArabic romanArabic = new RomanArabic("MCMXCIX");
         Assert.assertEquals( romanArabic.getArabic(), 1999 );
     }

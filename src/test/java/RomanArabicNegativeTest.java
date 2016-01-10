@@ -13,6 +13,12 @@ public class RomanArabicNegativeTest {
         MCCM - IllegalStateException
         IIII - IllegalStateException
         CCM - IllegalStateException
+        MLMCMX - IllegalStateException
+        LMCMXM - IllegalStateException
+        XM - IllegalStateException
+        KAROL - IllegalStateException
+        IXCM - IllegalStateException
+        ICXM - IllegalStateException
 
      */
 
