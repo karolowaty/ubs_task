@@ -84,33 +84,6 @@ public class RomanArabic {
         this.arabic = sum;
     }
 
-    /*
-    private void setArabic(String roman) throws IllegalStateException {
-        int arabic = 0;
-        int previous = 0;
-        int countedInRow = 1;
-
-        for(int i = roman.length()-1; i>=0 ; i--) {
-
-            int current = romanCharsWeight.get(roman.charAt(i));
-            countedInRow = (current == previous) ? countedInRow+1 : 1;
-
-            if (current < previous){
-                if (countedInRow > 1) throw new IllegalStateException();
-                // previous musi byc wielokrotnoscia 10
-                arabic -= current;
-            }else {
-                if (countedInRow > 3) throw new IllegalStateException();
-                arabic += current;
-            }
-            if( current != previous)
-                previous = current;
-
-        }
-        this.arabic = arabic;
-    }
-    */
-
     public int getArabic(){
         return this.arabic;
     }
