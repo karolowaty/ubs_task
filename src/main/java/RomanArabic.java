@@ -61,6 +61,7 @@ public class RomanArabic {
 
         int countedInRow = 1;
         int currentSign = 1;
+        int fallingTrend = 0;
 
         for(int i = roman.length()-2; i>=0 ; i--) {
 
@@ -68,8 +69,10 @@ public class RomanArabic {
 
             countedInRow = (current == previous) ? countedInRow+1 : 1;
             currentSign = ( (current < previous) || (current > previous && currentSign < 0 ) ) ? opositeSign(currentSign):currentSign;
+            fallingTrend = ( current < previous )? fallingTrend+1 : 0;
 
             if(
+                ( fallingTrend > 1 ) ||
                 ( currentSign < 0 && countedInRow > 1 ) ||
                 ( currentSign < 0 && countedInRow == 1 && current*10/previous != 1 && current*10/previous != 2 ) ||
                 ( currentSign > 0 && countedInRow > 3 )
